@@ -1,0 +1,202 @@
+body {
+	font-family: 'Montserrat', sans-serif;
+	background: url(../img/diagmonds.png);
+}
+
+/*************************************
+*************** Header ***************
+**************************************/
+.header {
+	width: 80%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 40px;
+}
+
+.header h1 { color: #b2b2b2; }
+
+/*************************************
+************ Main Content ************
+**************************************/
+.main_content {
+	max-width: 1366px;
+	margin: 0 auto;
+}
+
+/*********** Memory Board ***********/
+#memory_board { 
+	width: 625px;
+	height: 515px;
+	padding: 10px;
+	margin: 0 auto;
+	background-color: rgba(229, 105, 24, 0.4);
+	text-align: center;
+}
+
+.flip { display: inline-block; }
+
+.tile {
+	position: relative;
+	background-position: center;
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+	cursor: pointer;
+	text-align: center;
+}
+
+.tile .front {
+	z-index: 10;
+	background: url(../img/tile_bg3.jpg) no-repeat;
+}
+
+.tile .back {
+	z-index: 11;
+	transform: rotateY(180deg);
+}
+
+.tile .front,
+.tile .back {
+	position: absolute;
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-size: 100% 100%;
+}
+
+#start_btn, .reset_game_btn {
+	cursor: pointer;
+	border: none;
+	background-color: #C45F06;
+	color: white;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 15px 40px;
+	margin-top: 35%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.reset_game_btn { 
+	display: none; 
+	margin: 0 auto;
+}
+
+.play_again_btn {
+	cursor: pointer;
+	border: none;
+	background-color: #C45F06;
+	color: white;
+	text-transform: uppercase;
+	font-size: 16px;
+	padding: 15px 40px;
+}
+
+.counter_area { 
+	display: none;
+	margin: 20px auto;
+	color: #b2b2b2; 
+	text-align: center;
+	width: 60%;
+	font-size: 16px;
+}
+
+/* Success Messages */
+.is_hidden { display: none; }
+.match_msg { 
+	position: absolute;
+	font-family: 'Comic Sans MS';
+	font-size: 0.8em;
+	z-index: 9001;
+	width: 260px;
+	text-shadow: 0px 2px 2px rgba(0, 0, 0, .5);
+}
+
+#match_msg_1 { color: #DFE912; top: 240px; left: 265px; }
+#match_msg_2 { color: #06C4C1; top: 50px; right: 50px; }
+#match_msg_3 { color: #C13EB7; bottom: 175px; right: 50px; }
+#match_msg_4 { color: #73C415; bottom: 150px; left: 130px; }
+#match_msg_5 { color: #FF6700; top: 130px; left: 70px; }
+#match_msg_6 { color: #DFE912; bottom: 70px; right: 200px; }
+#match_msg_7 { color: #06C4C1; bottom: 480px; left: 80px; }
+#match_msg_8 { color: #C13EB7; top: 200px; right: 60px; }
+#match_msg_9 { color: #73C415; bottom: 400px; right: 200px; }
+#match_msg_10 { color: #FF6700; top: 500px; left: 95px; }
+#match_msg_11 { color: #DFE912; bottom: 300px; right: 150px; }
+
+/* Highscore Sidebar */
+.right {
+	display: none;
+	float: right;
+	color: #C45F06;
+	width: 250px;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+
+.right ol {
+	width: 195px;
+	margin: 35px auto; 
+}
+.right ol li { 
+	font-size: 14px; 
+	line-height: 35px; 
+}
+
+.desc { color: #8b8b8b; }
+.name, .score { color: #bababa;}
+.score_row { color: white; }
+.score {
+	float: right; 
+	margin-right: 20px; 
+}
+
+.highscore_heading { 
+	text-align: center; 
+	font-weight: bold; 
+}
+
+/* Modal */
+.lightbox-open { overflow-y: hidden; }
+
+.backdrop {
+  background: #000;
+  display: none;
+  height: 100%;
+  left: 0;
+  opacity: .0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 50; 
+}
+
+.score_modal {
+	box-shadow: 0px 2px 11px 4px rgba(14, 14, 14, 0.91);
+}
+
+.form_content { 
+	position: absolute;
+	width: 100%;
+	top: 36%;
+	display: none; 
+	z-index: 51;
+}
+
+.form_content form {
+	margin: 0 auto;
+	background-color: #C45F06;
+	padding: 15px;
+	width: 450px;
+	text-align: center;
+	color: white;
+}
+
+.form_content label { font-weight: normal; }
+.form_content h3, label { text-shadow: 2px 1px 1px #2A2A2A; }
+.form_content #input_name { 
+	margin: 5px 5px 10px 5px; 
+	color: black;
+}
+
+button { text-shadow: 1px 1px 1px #252525; }
